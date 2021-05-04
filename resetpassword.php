@@ -25,13 +25,13 @@ if($pwd!=$cpwd)
 $query2=mysqli_query($con,"UPDATE `users` SET `pwd`='".$pwd."' WHERE `icno`=5".$eid);
 if($query2)
     echo '<script type="text/javascript"> 
-    alert("Records Updated Successfully"); 
+    alert("Password Updated Successfully"); 
     window.location.href = "DashboardContent.php";
     </script>;';
 else
     echo '<script type="text/javascript"> 
-    alert("Records Couldnot Be Updated"); 
-    window.location.href = "DashboardContent.php";
+    alert("Password Couldnot Be Updated"); 
+    window.location.href = "Forgotpassword.php";
     </script>;';
 echo $query2;
 ?>

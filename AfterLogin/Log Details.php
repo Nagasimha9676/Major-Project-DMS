@@ -8,157 +8,23 @@
         		<th>IN</th>
             <th>OUT</th>
       		</tr>
-      		<tr>
-        		<td><?php echo date('d-m-Y',strtotime("-0 days"));?></td>
-        		<td></td>
-            <td></td>
-      		</tr>
-      		<tr>
-        		<td><?php echo date('d-m-Y',strtotime("-1 days"));?></td>
-        		<td></td>
-            <td></td>
-      		</tr>
-      		<tr>
-        		<td><?php echo date('d-m-Y',strtotime("-2 days"));?></td>
-        		<td></td>
-            <td></td>
-      		</tr>
-      		<tr>
-        		<td><?php echo date('d-m-Y',strtotime("-3 days"));?></td>
-        		<td></td>
-            <td></td>
-      		</tr>
-      		<tr>
-        		<td><?php echo date('d-m-Y',strtotime("-4 days"));?></td>
-        		<td></td>
-            <td></td>
-      		</tr>
-      		<tr>
-      			<td><?php echo date('d-m-Y',strtotime("-5 days"));?></td>
-      			<td></td>
-            <td></td>
-      		</tr>
-          <tr>
-            <td><?php echo date('d-m-Y',strtotime("-6 days"));?></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><?php echo date('d-m-Y',strtotime("-7 days"));?></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><?php echo date('d-m-Y',strtotime("-8 days"));?></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><?php echo date('d-m-Y',strtotime("-9 days"));?></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><?php echo date('d-m-Y',strtotime("-10 days"));?></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><?php echo date('d-m-Y',strtotime("-11 days"));?></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><?php echo date('d-m-Y',strtotime("-12 days"));?></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><?php echo date('d-m-Y',strtotime("-13 days"));?></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><?php echo date('d-m-Y',strtotime("-14 days"));?></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><?php echo date('d-m-Y',strtotime("-15 days"));?></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><?php echo date('d-m-Y',strtotime("-16 days"));?></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><?php echo date('d-m-Y',strtotime("-17 days"));?></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><?php echo date('d-m-Y',strtotime("-18 days"));?></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><?php echo date('d-m-Y',strtotime("-19 days"));?></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><?php echo date('d-m-Y',strtotime("-20 days"));?></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><?php echo date('d-m-Y',strtotime("-21 days"));?></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><?php echo date('d-m-Y',strtotime("-22 days"));?></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><?php echo date('d-m-Y',strtotime("-23 days"));?></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><?php echo date('d-m-Y',strtotime("-24 days"));?></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><?php echo date('d-m-Y',strtotime("-25 days"));?></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><?php echo date('d-m-Y',strtotime("-26 days"));?></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><?php echo date('d-m-Y',strtotime("-27 days"));?></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><?php echo date('d-m-Y',strtotime("-28 days"));?></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><?php echo date('d-m-Y',strtotime("-29 days"));?></td>
-            <td></td>
-            <td></td>
-          </tr>
     	</tbody>
+      <?php
+      $user=$_SESSION["id"];
+      $query = "SELECT * FROM `userlog` WHERE `uid`=".$user." and `sind`>'".date('Y-m-d',strtotime("-30 days"))."' ORDER BY `sind` DESC,`sint` DESC";
+      if ($result = $con->query($query)) {
+          while ($row = $result->fetch_assoc()) {
+              $sind = $row["sind"];
+              $sint = $row["sint"];
+              $outt = $row["outt"];
+              echo '<tr> 
+                        <td>'.$sind.'</td> 
+                        <td>'.$sint.'</td>
+                        <td> '.$outt.'</td> 
+                    </tr>';
+          }
+          $result->free();
+      }?>
   	</table>
     </div>
 </div>

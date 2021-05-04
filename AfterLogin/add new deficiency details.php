@@ -15,7 +15,7 @@
 </style>
 <div class="card container-fluid">
   <div style="background-color: white;" class="container row">
-      <form style=" border: 2px dotted red;" class="container row m-2">
+      <form style="border: 2px dotted red;" class="container row m-2" method="post" action="adddef.php">
         <div class="container row"><br/></div>
         <div class="container row">
           <div class="col-lg-9 col-sm-12 row">
@@ -27,11 +27,19 @@
               <label for="check2"style="font-size: 18px;">No</label>&emsp;
             </div>
           </div>
-          <select id="selnat" name="Select Nature of Work" class="col-lg-3 col-sm-12 row">
-            <option value="0">Select Nature of Work</option>
-            <option value="1">SG1AOH20</option>
-            <option value="2">SG2AOH20</option>
-            <option value="3">SG3AOH20</option>
+          <select id="selnat" name="naturework" class="col-lg-3 col-sm-12 row">
+            <option name="naturework" value="0">Select Nature of Work</option>
+            <?php
+                $query="SELECT * FROM `aohmta`";
+                if ($result = $con->query($query)) 
+                {
+                    while ($row = $result->fetch_assoc()) 
+                    {
+                        echo "<option name='naturework' value='" . $row['aohmta'] ."'>" . $row['aohmta'] ."</option>";
+                    }
+                    $result->free();
+                }
+            ?>
           </select>
         </div>
         <div class="container row"><br/></div>
@@ -42,23 +50,50 @@
         </div>
         <div class="container row">
           <div class="col-lg-4 col-sm-12 row">
-            <select id="selma" name="Select Maintenance Agency">
-              <option value="0">Select Maintenance Agency</option>
-              <option value="1">MECHANICAL</option>
-              <option value="2">ELECTRICAL</option>
+            <select id="selma" name="MaintenanceAgency">
+              <option name="MaintenanceAgency" value="0">Select Maintenance Agency</option>
+              <?php
+                $query="SELECT * FROM `agency`";
+                if ($result = $con->query($query)) 
+                {
+                    while ($row = $result->fetch_assoc()) 
+                    {
+                        echo "<option name='MaintenanceAgency' value='" . $row['aname'] ."'>" . $row['aname'] ."</option>";
+                    }
+                    $result->free();
+                }
+            ?>
             </select>
           </div>
           <div class="col-lg-4 col-sm-12 row">
-            <select id="selma" name="Select Maintenance Agency">
-              <option value="0">Select Location/System</option>
-              <option value="1">220KV & 33KV</option>
-              <option value="2">24V & 220V DC</option>
+            <select id="selma" name="Location">
+              <option name="Location" value="0">Select Location/System</option>
+              <?php
+                $query="SELECT * FROM `location`";
+                if ($result = $con->query($query)) 
+                {
+                    while ($row = $result->fetch_assoc()) 
+                    {
+                        echo "<option name='Location' value='" . $row['lname'] ."'>" . $row['lname'] ."</option>";
+                    }
+                    $result->free();
+                }
+            ?>
             </select>
           </div><div class="col-lg-4 col-sm-12 row">
-            <select id="selma" name="Select Maintenance Agency">
-              <option value="0">Select Equipment Name</option>
-              <option value="1">220KV LINES</option>
-              <option value="2">220KV SWITCH YARD</option>
+            <select id="selma" name="EquipmentName">
+              <option name="EquipmentName" value="0">Select Equipment Name</option>
+              <?php
+                $query="SELECT * FROM `equipment`";
+                if ($result = $con->query($query)) 
+                {
+                    while ($row = $result->fetch_assoc()) 
+                    {
+                        echo "<option name='EquipmentName' value='" . $row['ename'] ."'>" . $row['ename'] ."</option>";
+                    }
+                    $result->free();
+                }
+            ?>
             </select>
           </div>
         </div>

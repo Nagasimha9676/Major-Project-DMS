@@ -28,7 +28,7 @@
                               <form method="post" action="login.php">
                                 <label class="col-sm-12">UserId:<input type="text" name="userid" id="userid"></label>
                                 <label class="col-sm-12">Password:<input type="password" name="password" id="password"></label>
-                                <div class="col-sm-12"><label><input type="checkbox" checked="checked" name="remember"> Remember me  </label></div>
+                                <div class="col-sm-12"><label><input type="checkbox" id="remember" name="remember" checked="checked" name="remember"> Remember me  </label></div>
                                 <div class="col-sm-12">
                                   <button type="Submit" class="btn btn-danger col-md-3 col-sm-12 p-1" align="center" style="background-color: #FF4500; border: #FF4500;">Login</button>
                                   <a href="forgotpassword.php" class="col-md-9 col-sm-12" style="color: #ff4500;">Forgot Password?</a>

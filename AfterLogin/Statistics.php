@@ -4,32 +4,81 @@
     	<table class="table table-hover">
     	<tbody>
       		<tr>
-        		<td>Total Records</td>
-        		<td>21894</td>
+        		  <td>Total Records</td>
+        		  <td>
+              <?php
+                  $query = "SELECT * FROM `records`";
+                  $result = mysqli_query($con, $query);
+                  $count1 = mysqli_num_rows($result);
+                  echo $count1;
+              ?>    
+            </td>
       		</tr>
       		<tr>
         		<td>Total Members of DMS family</td>
-        		<td>115</td>
+        		<td>
+            <?php
+                  $query = "SELECT * FROM `users`";
+                  $result = mysqli_query($con, $query);
+                  $count1 = mysqli_num_rows($result);
+                  echo $count1;
+              ?>  
+            </td>
       		</tr>
       		<tr>
         		<td>Total Number of Permittee</td>
-        		<td>68</td>
+        		<td>
+              <?php
+                  $query = "SELECT * FROM `permittee`";
+                  $result = mysqli_query($con, $query);
+                  $count1 = mysqli_num_rows($result);
+                  echo $count1;
+              ?>
+            </td>
       		</tr>
       		<tr>
         		<td>Total Number of Equipment</td>
-        		<td>988</td>
+        		<td>
+            <?php
+                  $query = "SELECT * FROM `equipment`";
+                  $result = mysqli_query($con, $query);
+                  $count1 = mysqli_num_rows($result);
+                  echo $count1;
+              ?>  
+            </td>
       		</tr>
       		<tr>
         		<td>Total Records of Update TimeLine</td>
-        		<td>20642</td>
+        		<td>
+              <?php
+                  $query = "SELECT * FROM `editstat`";
+                  $result = mysqli_query($con, $query);
+                  $count1 = mysqli_num_rows($result);
+                  echo $count1;
+              ?>    
+            </td>
       		</tr>
       		<tr>
         		<td>Total Records of Edit History</td>
-        		<td>6472</td>
+        		<td>
+             <?php
+                  $query = "SELECT * FROM `editdr`";
+                  $result = mysqli_query($con, $query);
+                  $count1 = mysqli_num_rows($result);
+                  echo $count1;
+              ?>
+            </td>
       		</tr>
       		<tr>
       			<td>Total User Log Records</td>
-      			<td>27</td>
+      			<td>
+           <?php
+                  $query = "SELECT * FROM `userlog`";
+                  $result = mysqli_query($con, $query);
+                  $count1 = mysqli_num_rows($result);
+                  echo $count1;
+              ?>   
+            </td>
       		</tr>
     	</tbody>
   	</table>

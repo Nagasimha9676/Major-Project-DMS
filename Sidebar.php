@@ -26,30 +26,20 @@
         <div class="card-body" style="background-color: #FF8C00; ">
             <div class="card-subtitle table-responsive">
                 <table width="100%" style="color: white;">
-                    <tr>
-                        <td>JAKKAM NAGESWARA</td>
-                        <td>1925</td>
-                    </tr>
-                    <tr>
-                        <td>K SRINIVASARAO</td>
-                        <td>1259</td>
-                    </tr>
-                    <tr>
-                        <td>K SHRAVAN</td>
-                        <td>1059</td>
-                    </tr>
-                    <tr>
-                        <td>SUNIL BHUNYA</td>
-                        <td>1025</td>
-                    </tr>
-                    <tr>
-                        <td>CH S MADHAVA RAO</td>
-                        <td>1010</td>
-                    </tr>
-                    <tr>
-                        <td>B V KRISHNARAO</td>
-                        <td>966</td>
-                    </tr>
+                    <?php
+                        $query = "SELECT editedby, COUNT(editedby) AS magnitude FROM editstat GROUP BY editedby ORDER BY magnitude DESC LIMIT 6";
+                        if ($result = $con->query($query)) {
+                            while ($row = $result->fetch_assoc()) {
+                                $editedby = $row["editedby"];
+                                $magnitude = $row["magnitude"];
+                                echo 
+                                '<tr>
+                                    <td style="font-size: 15px;">'.$editedby.'</td> 
+                                    <td style="font-size: 15px;" align="center">'.$magnitude.'</td>
+                                </tr>';
+                            }
+                            $result->free();
+                        }?>                 
                 </table>
             </div>
         </div>
