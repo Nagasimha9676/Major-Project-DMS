@@ -15,7 +15,7 @@
 					<div class="col-sm-6"><input type="submit" class="btn btn-success" value="Change Password"/></div>
 				</div>
 				<div class="col-sm-12" align="center">
-					<p style="color:purple; font-family:verdana;"><font size="5"><b>Note:It is recommended to change</b> </font><input type="button" class="btn btn-light border border-info text-info" value="Default password Reset phrase"/></p>
+					<p style="color:purple; font-family:verdana;"><font size="5"><b>Note:It is recommended to change</b> </font><a href="Reset Phrase change.php"><input type="button" class="btn btn-light border border-info text-info" value="Default password Reset phrase"/></a></p>
 				</div>
 		</form>
     </div>

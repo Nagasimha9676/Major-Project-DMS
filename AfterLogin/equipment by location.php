@@ -7,10 +7,9 @@ if(isset($_POST["location"]))
 }
 ?>
 <script type="text/javascript">
-  function submitform()
+function submitform()
 {
-document.forms["myform"].submit();
-
+  document.forms["myform"].submit();
 }
 </script>
 <div class="card container-fluid">
@@ -37,7 +36,7 @@ document.forms["myform"].submit();
           </select> 
           </form>
         </div>
-        <div class="col-sm-5"><button class="btn btn-primary" style="background-color: #4CAF50; border: white; color: white;"><i class="fa fa-plus"></i>&ensp;ADD NEW EQUIPMENT</button></div>
+        <div class="col-sm-5"><a href="addequipment.php"><button class="btn btn-primary" style="background-color: #4CAF50; border: white; color: white;"><i class="fa fa-plus"></i>&ensp;ADD NEW EQUIPMENT</button></a></div>
       </div>
     </div>
     <div class="col-lg-7 col-sm-12">

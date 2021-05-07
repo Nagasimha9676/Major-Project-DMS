@@ -9,9 +9,10 @@
           <th>Sno</th>
           <th>Permittee Name</th>
           <th>Agency</th>
-          <th>Existing SV</th>
+          <th>Existing SWP</th>
           <th>Added On</th>
           <th>Added By</th>
+          <th>Edit/ Delete</th>
         </tr>
       </thead>
       <tbody>

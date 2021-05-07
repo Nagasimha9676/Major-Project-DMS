@@ -6,10 +6,10 @@
       	</div>
       	<div class="col-xl-6 col-lg-57 col-sm-12">
       		<div class="row">
-      			<div class="col-xl-5 col-sm-6 p-1">
+      			<form action="search.php" method="GET" class="col-xl-5 col-sm-6 p-1">
       				<input type="text" placeholder="Search" name="search" style="border: #FF4500; color: #FF4500;">
       				<button type="submit" class="search"><i class="fa fa-search" style="color: white;"></i></button>
-      			</div>
+      			</form>
       			<div class="col-xl-7 col-sm-6">
       				<button type="button" class="btn btn-danger pt-1 search" data-toggle="modal" data-target="#exampleModal">Sign In</button>
               <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="color: black;">

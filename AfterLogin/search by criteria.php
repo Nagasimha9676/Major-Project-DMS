@@ -13,9 +13,9 @@
       <div class="row p-4">
         <div class="container-fluid row p-1">
           <div class="col-sm-5">DR INITIATED DATE RANGE:</div>
-          <div class="col-sm-3"><input type="date" name="date1"></div>
+          <div class="col-sm-3"><input type="date" name="date1" max="<?php echo date("Y-m-d");?>"></div>
           <div class="col-sm-1">to</div>
-          <div class="col-sm-3"><input type="date" name="date2"></div>
+          <div class="col-sm-3"><input type="date" name="date2" max="<?php echo date("Y-m-d");?>"></div>
         </div>
         <div class="container-fluid row p-1">
           <div class="col-sm-5">DEFICIENCY CURRENT STATUS:</div>

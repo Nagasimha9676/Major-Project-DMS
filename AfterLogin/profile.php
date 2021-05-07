@@ -13,7 +13,7 @@ $result=mysqli_fetch_row($query);
         <label class="col-sm-4 mt-1 mb-1 p-2">Member From</label>       
         <div class="col-sm-8">:<?php echo $result[1];?></div>
         <label class="col-sm-4 mt-1 mb-1 p-2">Password Reset Phrase</label>       
-        <div class="col-sm-8"><button class="btn btn-primary" style="background-color: #4CAF50; border: white; color: white;">Manage Reset Phrase</button></div>
+        <div class="col-sm-8"><a href="Reset Phrase change.php"><button class="btn btn-primary" style="background-color: #4CAF50; border: white; color: white;">Manage Reset Phrase</button></a></div>
     </div>
 </div>
 <div class="container-fluid mt-3">

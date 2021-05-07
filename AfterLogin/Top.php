@@ -10,10 +10,10 @@ $result=mysqli_fetch_row($query);
       	</div>
       	<div class="col-xl-6 col-lg-57 col-sm-12">
       		<div class="row">
-      			<div class="col-xl-5 col-sm-6 p-1">
+      			<form action="search.php" method="GET" class="col-xl-5 col-sm-6 p-1">
       				<input type="text" placeholder="Search" name="search" style="border: #FF4500; color: #FF4500;">
       				<button type="submit" class="search"><i class="fa fa-search" style="color: white;"></i></button>
-      			</div>
+      			</form>
       			<div class="col-xl-7 col-sm-6">
               <div class="dropdown">
                 <button class="btn btn-danger dropdown-toggle search" type="button" id="menu1" data-toggle="dropdown">

@@ -4,9 +4,9 @@ require "../connect.php";
 $currpwd=$_POST["currpwd"];
 $newpwd=$_POST["newpwd"];
 $renewpwd=$_POST["renewpwd"];
-$query=mysqli_query($con,"SELECT * FROM `users` WHERE `icno`=".$_SESSION["id"]." AND `pwd`='".$currpwd."'");
-$row = mysqli_num_rows($query);
-if($row==0)
+$query=mysqli_query($con,"SELECT `pwd` FROM `users` WHERE `icno`=".$_SESSION["id"]);
+$row = mysqli_fetch_assoc($query);
+if(!password_verify($currpwd,$row["pwd"]))
 {
 	echo '<script type="text/javascript"> 
     alert("Current Password Incorrect"); 
@@ -27,6 +27,7 @@ else if($renewpwd!=$newpwd)
     window.location.href = "change my password.php";
     </script>;';
 }
+$newpwd=password_hash($newpwd, PASSWORD_DEFAULT);
 $query2="UPDATE `users` SET `pwd`='".$newpwd."' WHERE `icno`=".$_SESSION["id"];
 $result2=mysqli_query($con,$query2);
 if($query2)

@@ -22,6 +22,7 @@ if($pwd!=$cpwd)
     window.location.href = "Forgotpassword.php";
     </script>;';
 }
+$pwd=password_hash($pwd, PASSWORD_DEFAULT);
 $query2=mysqli_query($con,"UPDATE `users` SET `pwd`='".$pwd."' WHERE `icno`=5".$eid);
 if($query2)
     echo '<script type="text/javascript"> 
@@ -33,5 +34,4 @@ else
     alert("Password Couldnot Be Updated"); 
     window.location.href = "Forgotpassword.php";
     </script>;';
-echo $query2;
 ?>
